@@ -19,10 +19,8 @@ def browser(request):
         # allow using different languages, e.g. --language=fr
         options = Options()
         options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
-        # path to driver
-        path = r"C:/chromedriver/chromedriver.exe"
         # declare and initialize driver variable
-        browser = webdriver.Chrome(executable_path=path, options=options)
+        browser = webdriver.Chrome(options=options)
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
         # allow using different languages, e.g. --language=fr
