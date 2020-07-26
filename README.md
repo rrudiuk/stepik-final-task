@@ -5,6 +5,6 @@ Course link: https://stepik.org/course/575/syllabus
 
 First install requirements.txt
 
-Run with:
+For evaluation run:
 
-pytest -v --tb=line --language=en test_main_page.py
+pytest -v --tb=line --language=en -m need_review
