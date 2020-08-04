@@ -4,8 +4,9 @@ from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from pages.basket_page import BasketPage
 
+
 @pytest.mark.login_guest
-class TestLoginFromMainPage():
+class TestLoginFromMainPage:
     def test_guest_should_see_login_link(self, browser):
         link = "http://selenium1py.pythonanywhere.com/"
         page = MainPage(browser, link)
@@ -25,6 +26,7 @@ class TestLoginFromMainPage():
         # проверяем что на странице отображаются элементы
         page_login.should_be_login_form()
 
+
 @pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
@@ -36,6 +38,5 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     page_basket = BasketPage(browser, browser.current_url)
     page_basket.should_be_empty_card_message()
     page_basket.should_be_no_added_to_basket_items()
-
 
 # pytest -v --tb=line --language=en test_main_page.py
